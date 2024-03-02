@@ -40,16 +40,6 @@ Contributions to the project are welcome. Please follow these steps to contribut
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
 
-## License
-
-Distributed under the MIT License. See `LICENSE` file for more information.
-
-## Contact
-
-Your Name - [@YourTwitter](https://twitter.com/YourTwitter)
-
-Project Link: [https://github.com/your_username/fivepd_access_QB](https://github.com/your_username/fivepd_access_QB)
-
 ## Acknowledgments
 
 - [QBCore Framework](https://github.com/qbcore-framework)
