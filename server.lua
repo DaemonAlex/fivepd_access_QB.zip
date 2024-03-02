@@ -1,12 +1,19 @@
 QBCore = exports['qb-core']:GetCoreObject()
-QBCore.Commands.Add("fivepd", "FivePD (Police Only)", {}, false, function(source, args)
+
+QBCore.Commands.Add("fivepd", "Access FivePD functionalities (Police Only)", {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
-    if Player and Player.PlayerData.job.name == 'police' then
-        -- We will replace this with actual FivePD functionality or commands once FivePD releases any info about their tool
-        TriggerClientEvent('chat:addMessage', source, {
-            args = {"[FivePD]", "Hello Officer."}
-        })
+    if Player then
+        if Player.PlayerData.job.name == 'police' then
+            TriggerClientEvent('chat:addMessage', source, {
+                args = {"[FivePD]", "Hello Officer, FivePD functionalities coming soon."}
+            })
+        else
+            TriggerClientEvent('chat:addMessage', source, {
+                args = {"[FivePD]", "Access denied: This command is restricted to police officers."}
+            })
+        end
     else
-        TriggerClientEvent('QBCore:Notify', source, 'FivePd Access Denied', 'error')
+        print("Error: Player data not found for source ID: " .. source)
     end
 end)
+
