@@ -2,7 +2,7 @@ QBCore = exports['qb-core']:GetCoreObject()
 QBCore.Commands.Add("fivepd", "FivePD (Police Only)", {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player and Player.PlayerData.job.name == 'police' then
-        -- We will replace this with actual FivePD functionality or commands later
+        -- We will replace this with actual FivePD functionality or commands once FivePD releases any info about their tool
         TriggerClientEvent('chat:addMessage', source, {
             args = {"[FivePD]", "Hello Officer."}
         })
