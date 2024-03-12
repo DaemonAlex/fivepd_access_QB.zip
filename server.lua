@@ -1,4 +1,5 @@
-QBCore = exports['qb-core']:GetCoreObject()
+-- Importing modules and setting up exports as per QBX documentation
+local QBX = exports['qbx_core']:GetCoreObject()
 
 local function hasAccess(playerJob)
     local accessibleJobs = {['police'] = true, ['admin'] = true, ['god'] = true}
@@ -14,16 +15,17 @@ end
 local commandCooldown = {}
 local cooldownTime = 60
 
-QBCore.Commands.Add("fivepd", "Access FivePD functionalities (Police, Admin, God Only)", {}, false, function(source, args)
+-- Adjusted command registration for QBX
+RegisterCommand("fivepd", function(source, args)
     local src = source
     if commandCooldown[src] and os.time() - commandCooldown[src] < cooldownTime then
         sendMessage(src, "Please wait before using this command again.")
         return
     end
 
-    local Player = QBCore.Functions.GetPlayer(src)
+    local Player = QBX.Functions.GetPlayer(src)
     if Player then
-        if hasAccess(Player.PlayerData.job.name) then
+        if hasAccess(Player.job.name) then
             sendMessage(src, "Hello, access to FivePD functionalities is coming soon.")
             commandCooldown[src] = os.time()
         else
@@ -32,5 +34,6 @@ QBCore.Commands.Add("fivepd", "Access FivePD functionalities (Police, Admin, God
     else
         print("Error: Player data not found for source ID: " .. src)
     end
-end)
+end, false)
 
+-- Making sure to replace specific function calls and access patterns to match QBX's approach
