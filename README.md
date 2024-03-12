@@ -12,7 +12,7 @@ This FiveM script enhances roleplay servers by integrating QBCore job roles with
 
 Before you begin, ensure you have met the following requirements:
 - FiveM server setup and running.
-- [QBCore Framework](https://github.com/qbcore-framework) installed and configured.
+- [QBX Framework](https://github.com/Qbox-project/) installed and configured.
 - [FivePD Mod](https://gtapolicemods.com/index.php?/files/file/818-fivepd/) installed on your server.
 
 ## Installation
